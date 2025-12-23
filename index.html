@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/mini-coi.js" scope="./"></script> 
-    <title>PyScript Application Template</title>
-
+    <title>Transliterator</title>
+  
     <!-- Recommended meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <!-- PyScript CSS -->
-    <link rel="stylesheet" href="https://pyscript.net/releases/2024.6.1/core.css">
-
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.11.2/core.css">
     <!-- This script tag bootstraps PyScript -->
-    <script type="module" src="https://pyscript.net/releases/2024.6.1/core.js"></script>
+    <script type="module" src="https://pyscript.net/releases/2025.11.2/core.js"></script>
 </head>
-<body>
-    <script type="mpy" src="./main.py" config="./config.json" terminal></script>
+<body>  
+    <h1>Transliterators for Dagestanian languages</h1>
+    <p>Transliterate cyrillic script of Dagestanian languages into IPA.</p>
+    <p>Available languages: lak, avar, dargwa, lezgian.</p>
+    <p>Loading may take a few seconds.</p>
+    <input type="text" name="word" id="word" placeholder="Type text here" style="height:100px;width:200px"/>
+    <p></p>
+    <form action="#">
+      <label for="lang">Language</label>
+      <select name="lang" id="lang">
+        <option value="avar">avar</option>
+        <option value="lezgian">lezgian</option>
+        <option value="dargwa">dargwa</option>
+        <option value="lak">lak</option>
+        <option value="chamalal">lak</option>
+        <option value="botlikh">lak</option>
+        <option value="tsakhur">lak</option>
+        <option value="khwarshi">lak</option>
+      </select>
+    </form>
+    <p></p>
+    <button py-click="transliterating">Transliterate</button>
+    <p></p>
+    <div id="output"></div>
+    <script type="py" src="./main.py" config="./pyscript.toml"></script>
 </body>
 </html>
